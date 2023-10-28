@@ -1,0 +1,33 @@
+.hero-connect {
+    padding-top: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+    padding-bottom: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+    background-color: #f0efe9;
+    /* background-image: url(/images/bg-effects/bg-connect.svg);
+    background-repeat: no-repeat;
+    background-position: 0% 100%; */
+  }
+  .hero-connect .container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .hero-connect .container a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .hero-connect .container a.active {
+    font-weight: 500;
+    color: inherit;
+  }
+  .hero-connect .container a:hover {
+    text-decoration: underline;
+  }
+  .hero-connect .container h1 {
+    color: #191919;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
+  }

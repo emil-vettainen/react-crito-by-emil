@@ -1,0 +1,84 @@
+.our-services {
+    padding-top: clamp(3.5rem, 2.7518rem + 3.1925vw, 5.625rem);
+    padding-bottom: clamp(3.5rem, 2.0915rem + 6.0094vw, 7.5rem);
+    background-color: #F0EFE9;
+    /* background-image: url(/images/bg-effects/bg-our-services.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%; */
+  }
+  .our-services .container h2 {
+    margin-top: 20px;
+  }
+  @media (min-width: 992px) {
+    .our-services .container h2 {
+      width: 500px;
+    }
+  }
+  .our-services .container .service-box-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    margin: 3.125rem 0;
+  }
+  @media (min-width: 576px) {
+    .our-services .container .service-box-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1200px) {
+    .our-services .container .service-box-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .our-services .container .service-box-grid .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 20px;
+    background-color: #fff;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .our-services .container .service-box-grid .service-card h4::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #191919;
+    margin-bottom: 40px;
+  }
+  .our-services .container .service-box-grid .service-card p {
+    flex-grow: 1;
+  }
+  .our-services .container .service-box-grid .service-card i {
+    border: 1px solid #191919;
+    background-color: #191919;
+    color: #fff;
+    padding: 20px 20px;
+    border-radius: 50%;
+    margin-top: 25px;
+    align-self: flex-end;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  .our-services .container .service-box-grid .service-card:hover {
+    background-color: #F9D783;
+  }
+  .our-services .container .service-box-grid .service-card:hover i {
+    background-color: #fff;
+    border-color: #fff;
+    color: #191919;
+  }
+  .our-services .container .btn-browse-services {
+    display: flex;
+    justify-content: center;
+  }
+  /* .our-services .container .btn-browse-services a {
+    background-color: transparent;
+    border-color: #191919;
+    padding: 12px 30px;
+    flex-grow: 1;
+  } */
+  @media (min-width: 576px) {
+    .our-services .container .btn-browse-services a {
+      flex-grow: 0;
+    }
+  }

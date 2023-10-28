@@ -1,0 +1,101 @@
+.why-us {
+    margin-top: clamp(3.5rem, 3.412rem + 0.3756vw, 3.75rem);
+    margin-bottom: clamp(3rem, 1.4155rem + 6.7606vw, 7.5rem);
+    z-index: 0;
+    position: relative;
+  }
+  .why-us .container {
+    display: flex;
+    flex-flow: column;
+    gap: 60px;
+    justify-content: space-between;
+  }
+  @media (min-width: 992px) {
+    .why-us .container {
+      flex-flow: row;
+    }
+  }
+  .why-us .container .us-info {
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    z-index: 1;
+    background-color: #fff;
+  }
+  .why-us .container .us-icon-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    row-gap: 40px;
+    margin-top: 20px;
+  }
+  @media (min-width: 768px) {
+    .why-us .container .us-icon-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 992px) {
+    .why-us .container .us-icon-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .why-us .container .us-icon-grid .us-icon-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  @media (min-width: 576px) {
+    .why-us .container .us-icon-grid .us-icon-info {
+      flex-direction: row;
+    }
+  }
+  .why-us .container .us-icon-grid .us-icon-info .icon-txt {
+    text-align: center;
+  }
+  @media (min-width: 576px) {
+    .why-us .container .us-icon-grid .us-icon-info .icon-txt {
+      text-align: start;
+    }
+  }
+  .why-us .container .us-icon-grid .us-icon-info .icon-txt h4 {
+    margin: 0;
+  }
+  .why-us .container .us-icon-grid .us-icon-info .icon-txt p {
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  .why-us .container .us-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 0;
+  }
+  .why-us .container .us-img img {
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding-top: 20px;
+  }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .why-us .container .us-img img {
+      position: sticky;
+      top: 10px;
+    }
+  }
+  @media (min-width: 992px) {
+    .why-us .container .us-img::after {
+      content: "";
+      display: block;
+      height: 420px;
+      background-color: #F0EFE9;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 55%;
+      z-index: -1;
+    }
+  }
+  

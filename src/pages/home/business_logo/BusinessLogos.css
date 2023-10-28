@@ -1,0 +1,26 @@
+.business-logo {
+    padding-top: clamp(3rem, 2.2958rem + 3.0047vw, 5rem);
+    padding-bottom: clamp(3rem, 2.2958rem + 3.0047vw, 5rem);
+  }
+  .business-logo .container .business-logo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    place-items: center;
+  }
+  @media (min-width: 567px) {
+    .business-logo .container .business-logo-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 768px) {
+    .business-logo .container .business-logo-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (min-width: 992px) {
+    .business-logo .container .business-logo-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  

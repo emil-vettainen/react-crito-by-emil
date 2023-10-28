@@ -1,0 +1,172 @@
+.article {
+    padding-top: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+  }
+  .article .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    -moz-column-gap: 140px;
+         column-gap: 140px;
+    align-items: flex-start;
+    position: relative;
+  }
+  .article .container article .article-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 1rem 0;
+  }
+  .article .container article .article-info h2 {
+    width: 100%;
+  }
+  .article .container article .article-info p:not(:nth-child(2)):before {
+    content: "";
+    background-color: #F9D783;
+    aspect-ratio: 1/1;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 1px;
+  }
+  .article .container article .article-content img {
+    
+    
+    min-height: 600px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-bottom: 2rem;
+   
+
+  }
+  .article .container article .article-content p {
+    padding: 1rem 1rem;
+  }
+  .article .container article .article-category {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  .article .container article .article-category a {
+    background-color: #dad9d3;
+    color: #191919;
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 25px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .article .container article .article-category a:hover {
+    transform: scale(0.9);
+  }
+  .article .container aside {
+    margin-top: 200px;
+    position: relative;
+  }
+  .article .container aside .search-post {
+    padding-bottom: 2rem;
+  }
+  .article .container aside .search-post input[type=text] {
+    min-width: 100%;
+    padding-block: 0.85rem;
+    padding-left: 4rem;
+    border-radius: 25px;
+    border: 1px solid #efefef;
+    background-color: #efefef;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  .article .container aside .search-post input[type=text]:focus {
+    outline: 0;
+  }
+  .article .container aside .search-post i {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0.85rem;
+    left: 1.5rem;
+  }
+  .article .container aside .recent-post {
+    border: 1px solid #dad9d3;
+    padding: 2rem 2.5rem;
+  }
+  .article .container aside .recent-post p {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #191919;
+    margin: 0;
+    text-wrap: balance;
+    padding: 0.5rem 0;
+  }
+  .article .container aside .recent-post p::after {
+    content: "";
+    height: 1px;
+    width: 50px;
+    background-color: #191919;
+    display: block;
+  }
+  .article .container aside .recent-post ul {
+    list-style: none;
+    padding: 0;
+  }
+  .article .container aside .recent-post ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #dad9d3;
+  }
+  .article .container aside .recent-post ul li a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #191919;
+    margin: 0;
+    text-decoration: none;
+  }
+  .article .container aside .recent-post ul li a span {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+  }
+  .article .container aside .categories-post {
+    margin-top: 2rem;
+    border: 1px solid #dad9d3;
+    padding: 2rem 2.5rem;
+  }
+  .article .container aside .categories-post p {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #191919;
+    margin: 0;
+    text-wrap: balance;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+  .article .container aside .categories-post p::after {
+    content: "";
+    height: 1px;
+    width: 50px;
+    background-color: #191919;
+    display: block;
+  }
+  .article .container aside .categories-post ul {
+    list-style: none;
+    padding: 0;
+  }
+  .article .container aside .categories-post ul li {
+    padding: 0.5rem 0;
+  }
+  .article .container aside .categories-post ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+  }
+  .article .container aside .categories-post ul li a span {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #7a7a75;
+  }
