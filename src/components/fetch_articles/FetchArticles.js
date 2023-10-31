@@ -1,8 +1,8 @@
 import React, { useEffect, useState }  from 'react'
 import ArticleCard from '../../pages/news/our_news/ArticleCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -22,6 +22,7 @@ const FetchArticles = ({url, enableSwiper}) => {
         const fetchData = async () => {
             setIsLoading(true)
             
+            
             try {
                 const response = await fetch(`${url}`)
                 const articles = await response.json()
@@ -36,9 +37,9 @@ const FetchArticles = ({url, enableSwiper}) => {
                 setArticles(articles)
             } catch (error) {
                 setError(error)
-            } finally {
-                setIsLoading(false)
             } 
+            
+            setIsLoading(false)
         }
         fetchData()
     }, [url])
@@ -47,8 +48,8 @@ const FetchArticles = ({url, enableSwiper}) => {
     if (isLoading) {
         return (
             <div className='container loading'>
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
         ) 
@@ -59,7 +60,6 @@ const FetchArticles = ({url, enableSwiper}) => {
             <div>Try again</div>
         )
     }
-
 
     if (enableSwiper) {
         return (
@@ -118,20 +118,23 @@ const FetchArticles = ({url, enableSwiper}) => {
                 <i className='button-next-slide fa-solid fa-angle-right'></i>          
                 <i className='button-prev-slide fa-solid fa-angle-left'></i>          
                 
-            
             </div>
         )
     }
+
+    
     
     return (
         <div className='article-news-grid'>
           {articles.map((article) => (
             <ArticleCard
-              key={article.id}
-              id={article.id}
-              title={article.title}
-              content={article.content}
-              imageUrl={article.imageUrl}
+                key={article.id}
+                id={article.id}
+                title={article.title}
+                content={article.content}
+                imageUrl={article.imageUrl}
+                month={article.month}
+                day={article.day}
             />
           ))}
         </div>

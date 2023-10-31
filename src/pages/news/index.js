@@ -10,7 +10,7 @@ const News = () => {
   return (
     <>
     <Header />
-    <TopSection title="News & Articles" />
+    <TopSection title="News & Articles" url="news" />
     <OurNews url="https://win23-assignment.azurewebsites.net/api/articles" />
     <SignForm />
     <Footer />

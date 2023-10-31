@@ -1,12 +1,13 @@
 import React from 'react'
 import './TopSection.css'
+import { NavLink } from 'react-router-dom'
 
-const TopSection = ({title}) => {
+const TopSection = ({title, url}) => {
   return (
     <section className="hero-connect">
         <div className="container">
-            <a href="/index.html">Home</a>
-            <a className="active" href="/contact.html">Contact</a>
+            <NavLink to={`/`}>Home</NavLink>
+            <NavLink to={`/${url}`}>{url}</NavLink>
             <h1>{title}</h1>
         </div>
     </section>

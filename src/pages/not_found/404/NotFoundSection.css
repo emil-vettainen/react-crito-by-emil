@@ -11,3 +11,7 @@
     text-align: center;
     margin-bottom: 1em;
 }
+
+.notfound a {
+    padding: 12px 30px;
+}

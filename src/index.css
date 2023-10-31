@@ -241,7 +241,7 @@ h4 {
   color: #191919;
   position: absolute;
   right: -30px;
-  top: 190px;
+  top: 150px;
   z-index: 99;
 }
 .button-prev-slide {
@@ -249,7 +249,7 @@ h4 {
   color: #191919;
   position: absolute;
   left: -30px;
-  top: 190px;
+  top: 150px;
   z-index: 99;
 }
 

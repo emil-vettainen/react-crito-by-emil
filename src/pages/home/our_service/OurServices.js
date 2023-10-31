@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './OurServices.css'
 import ServiceCard from './ServiceCard'
 import BtnLinks from '../../../components/ui/BtnLinks'
 
 const OurServices = () => {
-  const services = [
-    { title: 'Business Advice', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/business-advice'},
-    { title: 'Startup Business', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/startup-business'},
-    { title: 'Financial Advice', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/financial-advice'},
-    { title: 'Risk Management', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/risk-management'}
-  ]
+
+  const [services, setServices] = useState([])
+
+  useEffect (() => {
+    const getServices = () => {
+
+      const services = [
+        { id: '1', title: 'Business Advice', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/business-advice'},
+        { id: '2', title: 'Startup Business', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/startup-business'},
+        { id: '3', title: 'Financial Advice', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/financial-advice'},
+        { id: '4', title: 'Risk Management', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis in nam possimus.', url: '/services/risk-management'}
+      ]
+
+      setServices(services)
+
+    }
+
+    getServices()
+
+
+  }, [])
+
+
+  
   return (
     <section className="our-services">
       <div className="container">
@@ -18,8 +36,8 @@ const OurServices = () => {
 
         <div className="service-box-grid">
           {
-            services.map((service, index) => (
-              <ServiceCard key={index} title={service.title} description={service.description} url={service.url} />
+            services.map((service) => (
+              <ServiceCard key={service.id} title={service.title} description={service.description} url={service.url} />
             ))
           }
         </div>

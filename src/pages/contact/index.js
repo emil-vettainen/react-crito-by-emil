@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <>
         <Header />
-        <TopSection />
+        <TopSection title="Let´s Connect" url="contact" />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Header.css'
-import Logo from '../../assets/icons/Logo-header.svg'
+import LogoHeader from '../../assets/icons/Logo-header.svg'
 import { Link, NavLink } from 'react-router-dom'
 import BtnLinks from '../ui/BtnLinks'
 import SocialIcons from '../ui/SocialIcons'
@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
         <div className="container">
-            <Link to="/"><img src={Logo} alt="Crito-logo" /></Link>
+            <Link to="/"><img src={LogoHeader} alt="Crito-logo" /></Link>
             <div className="menu">
                 <div className="top-menu">
                     <div className="contact">
@@ -45,7 +45,7 @@ const Header = () => {
                         </ul>
 
                         <div className="login-button">
-                            <BtnLinks title="Login" url="/" />
+                            <BtnLinks title="Login" url="/login" />
                         </div>
 
                     </nav>

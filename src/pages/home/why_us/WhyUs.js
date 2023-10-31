@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './WhyUs.css'
+import WhyUsImg from '../../../assets/images/why-choose-us.jpg'
+import WhyUsIcon from './WhyUsIcon'
+import aiIcon from '../../../assets/icons/why_choose_us/ai.svg'
+import processIcon from '../../../assets/icons/why_choose_us/process.svg'
+import hexagonIcon from '../../../assets/icons/why_choose_us/strategic.svg'
+import designIcon from '../../../assets/icons/why_choose_us/experience.svg'
 
 const WhyUs = () => {
+
+
+    const [lists, setLists] = useState([])
+
+    useEffect (() => {
+
+        const getList = () => {
+            const lists = [
+                {id: '1', src: processIcon, alt: 'Illustration of thumbs up.', title: 'Process Excellence', description: 'Lorem, ipsum dolor sit amet consectetur.'},
+                {id: '2', src: hexagonIcon, alt: 'Illustration of hexagon.', title: 'Strategic Planning', description: 'Lorem, ipsum dolor sit amet consectetur.'},
+                {id: '3', src: designIcon, alt: 'Illustration of design tool.', title: 'Experience Design', description: 'Lorem, ipsum dolor sit amet consectetur.'},
+                {id: '4', src: aiIcon, alt: 'Illustration of AI.', title: 'Artificial Inteligence', description: 'Lorem, ipsum dolor sit amet consectetur.'}
+            ]
+
+            setLists(lists)
+        }
+
+        getList()
+    }, [])
+
+
+
   return (
     <section className="why-us">
             <div className="container">
@@ -11,44 +39,19 @@ const WhyUs = () => {
                     <h2>Why we are the best business consulting agency</h2>
 
                     <div className="us-icon-grid">
-                        <div className="us-icon-info">
-                           
-                            <img src="/icons/process.svg" alt="Illustration of thumbs up." />
-                            <div className="icon-txt">
-                                <h4>Process Exellence</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            </div>
-                        </div>
-
-                        <div className="us-icon-info">
-                            <img src="/icons/strategic.svg" alt="Illustration of hexagon." />
-                            <div className="icon-txt">
-                                <h4>Strategic Planning</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            </div>
-                        </div>
-
-                        <div className="us-icon-info">
-                            <img src="/icons/experience.svg" alt="Illustration of design tool." />
-                            <div className="icon-txt">
-                                <h4>Experience Design</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            </div>
-                        </div>
-
-                        <div className="us-icon-info">
-                            <img src="/icons/ai.svg" alt="Illustration of AI." />
-                            <div className="icon-txt">
-                                <h4>Artificial Inteligence</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            </div>
-                        </div>
+                        {
+                             lists.map((list) => (
+                                <WhyUsIcon key={list.id} src={list.src} alt={list.alt} title={list.title} description={list.description} />
+                             )) 
+                             
+                        }
+                       
 
                     </div>
                 </div>
-                <div className="us-img  ">
-                    <img src="/images/why-choose-us.jpg"
-                        alt="Picture of two colleagues conversing in a conference room" />
+                <div className="us-img">
+                    <img src={WhyUsImg}
+                        alt="two colleagues conversing in a conference room" />
                 </div>
             </div>
 

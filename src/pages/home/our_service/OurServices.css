@@ -71,12 +71,12 @@
     display: flex;
     justify-content: center;
   }
-  /* .our-services .container .btn-browse-services a {
+  .our-services .container .btn-browse-services a {
     background-color: transparent;
     border-color: #191919;
     padding: 12px 30px;
     flex-grow: 1;
-  } */
+  }
   @media (min-width: 576px) {
     .our-services .container .btn-browse-services a {
       flex-grow: 0;
