@@ -19,9 +19,9 @@ const Team = () => {
         const getTeamMembers = () => {
             const teamMembers = [
                 {id: '1', src: KristineImg, alt: 'Illustration of thumbs up.', name: 'Kristine Palmer', title: 'Chef Operation Officer'},
-                {id: '1', src: MarkImg, alt: 'Illustration of thumbs up.', name: 'Mark Aubri', title: 'Senior Consultant'},
-                {id: '1', src: KimberlyImg, alt: 'Illustration of thumbs up.', name: 'Kimberly Hansen', title: 'Senior Consultant'},
-                {id: '1', src: JustinImg , alt: 'Illustration of thumbs up.', name: 'Justin Willoman', title: 'Senior Tech Consultant'},
+                {id: '2', src: MarkImg, alt: 'Illustration of thumbs up.', name: 'Mark Aubri', title: 'Senior Consultant'},
+                {id: '3', src: KimberlyImg, alt: 'Illustration of thumbs up.', name: 'Kimberly Hansen', title: 'Senior Consultant'},
+                {id: '4', src: JustinImg , alt: 'Illustration of thumbs up.', name: 'Justin Willoman', title: 'Senior Tech Consultant'},
                 
             ]
 

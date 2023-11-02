@@ -25,9 +25,10 @@ const ArticlePost = () => {
             setArticle(article)
             
             
+            
         }
         fetchData()
-    }, [])
+    }, [id])
     
 
 
@@ -146,6 +147,7 @@ const ArticlePost = () => {
 
         </div>
 
+      
     </section>
   )
 }
