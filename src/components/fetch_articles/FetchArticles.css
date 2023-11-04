@@ -1,0 +1,123 @@
+.slider {
+    position: relative;
+    margin-top: 2.5rem;
+    margin-bottom: clamp(2rem, 1.5rem + 2.5vw, 3.75rem);
+   
+    
+  }
+  
+  .slider .article-news-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    
+   
+  }
+  .slider .article-news-card .card-img {
+    aspect-ratio: 16/9;
+    min-height: 300px;
+    object-fit: cover;
+    transition: opacity 0.2s ease-in-out;
+  }
+  .slider .article-news-card .card-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9D783;
+    width: 50px;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .slider .article-news-card .card-date p {
+    text-align: center;
+    margin: 0;
+    line-height: 18px;
+    color: #191919;
+  }
+  .slider .article-news-card .card-date p span {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #191919;
+  }
+  .slider .article-news-card .card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   
+  }
+  .slider .article-news-card .card-info p {
+    color: #6A6C71;
+    margin: 0;
+  }
+  .slider .article-news-card:hover img {
+    opacity: 0.8;
+  }
+  .slider .article-news-card:hover h4 {
+    text-decoration: underline;
+  }
+  
+  
+  
+  
+  .mySwiper .swiper-pagination{
+    position: relative;
+    margin-top: 3rem ;
+    
+  }
+  
+  .mySwiper .swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .mySwiper .swiper-pagination-bullet-active {
+    background-color: #191919;
+  }
+  
+  
+  .button-next-slide {
+    font-size: 1.875rem;
+    color: #191919;
+    position: absolute;
+    right: -30px;
+    top: 150px;
+    z-index: 99;
+  }
+
+
+
+  .button-prev-slide {
+    font-size: 1.875rem;
+    color: #191919;
+    position: absolute;
+    left: -30px;
+    top: 150px;
+    z-index: 99;
+    
+  }
+
+  .button-next-slide[aria-disabled="true"],
+  .button-prev-slide[aria-disabled="true"] {
+    opacity: 0.6;
+   
+  }
+  
+  
+  @media (max-width: 576px) {
+  
+    .button-next-slide, .button-prev-slide {
+      display: none;
+    }
+  }
+  
+  
+  .container.loading {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+  }

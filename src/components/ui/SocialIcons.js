@@ -1,12 +1,12 @@
 import React from 'react'
 
 
-const SocialIcons = ({title, url, icon}) => {
+const SocialIcons = (props) => {
   return (
     
     <li>
-      <a href={url} aria-label={title} target="_blank" rel="noreferrer noopener">
-          <i className={icon} aria-hidden="true" title={title}></i>
+      <a href={props.url} aria-label={props.title} target="_blank" rel="noreferrer noopener">
+          <i className={props.icon} aria-hidden="true" title={props.title}></i>
       </a>
     </li>
     

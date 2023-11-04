@@ -1,9 +1,10 @@
 import React from 'react'
-import ArticlePost from './article_post/ArticlePost'
+
 import Header from '../../components/header/Header'
 
 
 import ArticleNews from '../home/article_news/ArticleNews'
+import FetchArticlePost from '../../components/fetch_articles/FetchArticlePost'
 
 
 const index = () => {
@@ -13,7 +14,7 @@ const index = () => {
   return (
     <>
     <Header />
-    <ArticlePost />
+    <FetchArticlePost />
     <ArticleNews />
     
     

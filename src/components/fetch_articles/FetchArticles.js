@@ -1,16 +1,18 @@
 import React, { useEffect, useState }  from 'react'
-import ArticleCard from '../../pages/news/our_news/ArticleCard'
+import ArticleCard from '../ArticleCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import './FetchArticles.css' 
 
 
 
 const FetchArticles = ({url, enableSwiper}) => {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    console.log(isLoading);
     const [error, setError] = useState()
 
     const formatMonth = (date) => {
@@ -21,6 +23,7 @@ const FetchArticles = ({url, enableSwiper}) => {
     useEffect (() => {
         const fetchData = async () => {
             setIsLoading(true)
+            
             
             
             try {
@@ -100,16 +103,7 @@ const FetchArticles = ({url, enableSwiper}) => {
                     
                     {articles.map((article) => (
                         <SwiperSlide key={article.id}>
-                        <ArticleCard
-                        id={article.id}
-                        title={article.title}
-                        category={article.category}
-                        content={article.content}
-                        imageUrl={article.imageUrl}
-                        month={article.month}
-                        day={article.day}
-                        />
-                       
+                        <ArticleCard {...article}/>
                         </SwiperSlide> 
                     ))}
 
@@ -127,15 +121,7 @@ const FetchArticles = ({url, enableSwiper}) => {
     return (
         <div className='article-news-grid'>
           {articles.map((article) => (
-            <ArticleCard
-                key={article.id}
-                id={article.id}
-                title={article.title}
-                content={article.content}
-                imageUrl={article.imageUrl}
-                month={article.month}
-                day={article.day}
-            />
+            <ArticleCard key={article.id} {...article}/>
           ))}
         </div>
     )

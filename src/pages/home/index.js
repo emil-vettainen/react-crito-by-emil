@@ -4,7 +4,7 @@ import Showcase from './showcase/Showcase'
 import Footer from '../../components/footer/Footer'
 import BusinessLogos from './business_logo/BusinessLogos'
 import Features from './features/Features'
-import SignForm from '../../components/ui/SignForm'
+import SignForm from '../../components/SignForm'
 import AboutCompany from './about_company/AboutCompany'
 import OurService from './our_service/OurServices'
 import WhyUs from './why_us/WhyUs'
@@ -21,6 +21,7 @@ const Home = () => {
     <>
     <Header />
     <main>
+      <SignForm />
         <Showcase />
         <BusinessLogos />
         <Features />
@@ -31,7 +32,7 @@ const Home = () => {
         <Team />
         <Testimonials />
         <ArticleNews />
-        <SignForm />
+        
     </main>
     <Footer />
     </>

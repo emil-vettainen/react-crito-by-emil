@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.css'
 import LogoHeader from '../../assets/icons/Logo-header.svg'
 import { Link, NavLink } from 'react-router-dom'
@@ -6,6 +6,9 @@ import BtnLinks from '../ui/BtnLinks'
 import SocialIcons from '../ui/SocialIcons'
 
 const Header = () => {
+
+    const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header>
         <div className="container">
@@ -35,19 +38,30 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="main-menu">
-                    <button aria-label="Toggle Menu"><i className="fa-light fa-bars-staggered" aria-hidden="true"></i></button>
-                    <nav className="primary-navigation">
+                    <button onClick={() => setMenuOpen(!menuOpen)} className={menuOpen ? 'fixed': ''}>
+                        {menuOpen ? (<i className="fa-light fa-xmark-large"></i>) : (<i className="fa-light fa-bars-staggered"></i>) }
+                    </button>
+                    <nav className={`primary-navigation ${menuOpen ? 'show' : ''}`}>
                         <ul>
                             <li><NavLink className="underline" to="/">Home</NavLink></li>
                             <li><NavLink className="underline" to="/service">Service</NavLink></li>
                             <li><NavLink className="underline" to="/news">News</NavLink></li>
                             <li><NavLink className="underline" to="/contact">Contact</NavLink></li>
                         </ul>
-
                         <div className="login-button">
                             <BtnLinks title="Login" url="/login" />
                         </div>
 
+                        {menuOpen? (
+                            <div className="social-media">
+                            <ul>
+                                <SocialIcons title="Facebook" url="https://facebook.com" icon="fa-brands fa-facebook" />
+                                <SocialIcons title="Twitter" url="https://twitter.com" icon="fa-brands fa-twitter" />
+                                <SocialIcons title="Instagram" url="https://instagram.com" icon="fa-brands fa-instagram" />
+                                <SocialIcons title="Linkedin" url="https://linkedin.com" icon="fa-brands fa-linkedin" />  
+                            </ul>
+                        </div>
+                        ):''}
                     </nav>
                 </div>
             </div>

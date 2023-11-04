@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import '../../../assets/css/post.css'
+import './FetchArticlePost.css'
 
-const ArticlePost = () => {
+const FetchArticlePost = () => {
 
     const {id} = useParams();
     const [article, setArticle] = useState([])
@@ -152,4 +152,4 @@ const ArticlePost = () => {
   )
 }
 
-export default ArticlePost
+export default FetchArticlePost

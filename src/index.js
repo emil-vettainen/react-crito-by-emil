@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, ScrollRestoration} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css';
@@ -14,17 +14,12 @@ import ScrollTop from './components/ui/ScrollTop';
 
 
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   
     <BrowserRouter>
-     
       <ScrollTop />
       <Routes>
-     
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/news' element={<News />} />

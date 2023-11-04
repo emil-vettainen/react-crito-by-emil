@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import './ContactForm.css'
 
 const ContactForm = () => {
   const [values, setValues] = useState({
     name: '',
     email: '',
-    message: '',
+    message: ''
   });
 
   const [formError, setFormError] = useState({});
@@ -14,6 +15,7 @@ const ContactForm = () => {
     event.preventDefault();
     const errors = validate(values);
     setFormError(errors);
+    setIsFormSubmitted(false)
     if (Object.keys(errors).length === 0) {
       
       try {
@@ -57,18 +59,23 @@ const ContactForm = () => {
       errors.email = 'Ogiltig e-postadress';
     }
 
+    if (!values.message) {
+      errors.message = 'Message is required'
+    }
+
     return errors;
   };
 
   const inputChange = (event) => {
     const { name, value } = event.target;
     setValues({ ...values, [name]: value });
-     const errors = validate({ ...values, [name]: value });
+    const errors = validate({ ...values, [name]: value });
     setFormError(errors);
+    setIsFormSubmitted(false)
   };
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={validateForm} noValidate>
         <div className='forminput'>
           <input
@@ -103,13 +110,14 @@ const ContactForm = () => {
             value={values.message}
             onChange={inputChange}
           />
+          <p>{formError.message}</p>
         </div>
   
         <button type='submit'>Submit</button>
       </form>
   
       {isFormSubmitted ? (
-        <p>Tack! Ditt meddelande har skickats!</p>
+        <p className='tack'>Tack! Ditt meddelande har skickats!</p>
       ) : null}
     </div>
   );

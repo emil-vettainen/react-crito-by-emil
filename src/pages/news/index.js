@@ -3,7 +3,7 @@ import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import TopSection from '../../components/top_section/TopSection'
 import OurNews from './our_news/OurNews'
-import SignForm from '../../components/ui/SignForm'
+import SignForm from '../../components/SignForm'
 
 
 const News = () => {
