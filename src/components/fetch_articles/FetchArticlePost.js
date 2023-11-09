@@ -2,34 +2,34 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import './FetchArticlePost.css'
+import { useArticles } from '../../contexts/ArticlesContext'
 
 const FetchArticlePost = () => {
-
     const {id} = useParams();
-    const [article, setArticle] = useState([])
-    const [formattedDate, setFormattedDate] = useState('');
-
-    const formatDate = (dateString) => {
-        const options = { day: 'numeric', month: 'short', year: 'numeric' };
-        const formattedDate = new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
-        return formattedDate
-      };
-
+    const {article, fetchArticle, clearArticle, isLoading, error} = useArticles()
+   
+   
     useEffect (() => {
-        const fetchData = async () => {
-            const response = await fetch (`https://win23-assignment.azurewebsites.net/api/articles/${id}`)
-            const article = await response.json()
-
-            const formattedDate = formatDate(article.published);
-            setFormattedDate(formattedDate);
-            setArticle(article)
-            
-            
-            
-        }
-        fetchData()
+        fetchArticle(id)
+        return () => clearArticle ()
     }, [id])
-    
+
+
+    if (isLoading) {
+        return (
+            <div className='container loading'>
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        ) 
+    }
+
+    if (error) {
+        return (
+            <div>Try again</div>
+        )
+    }
 
 
   return (
@@ -38,7 +38,7 @@ const FetchArticlePost = () => {
             <article className="">
                 <div className="article-info">
                     <h2>{article.title}</h2>
-                    <p>{formattedDate}</p>
+                    <p>{article.formattedDate}</p>
                     <p>{article.category}</p>
                     <p>{article.author}</p>
                 </div>

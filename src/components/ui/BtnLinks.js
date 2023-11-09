@@ -6,10 +6,11 @@ const BtnLinks = (props) => {
     const getLinkClassName = () => {
         switch(props.type) {
             case 'transparent':
-                return 'button-transparent'
+              return 'button-transparent'
+            case 'dark':
+              return 'button-dark'
             default:
-                return 'button'
-                
+              return 'button'
         }
     }
   return (

@@ -1,77 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './ProjectCase.css'
+import ProjectsCard from '../../../components/ProjectsCard'
+import BtnLinks from '../../../components/ui/BtnLinks'
+import Img1 from './../../../assets/images/projects/Image1.jpg'
+import Img2 from './../../../assets/images/projects/Image2.jpg'
+import Img3 from './../../../assets/images/projects/Image3.jpg'
+import Img4 from './../../../assets/images/projects/Image4.jpg'
 
 const ProjectCase = () => {
+    const [projects, setProjects] = useState([])
+
+    useEffect (() => {
+
+        const getProjects = () => {
+            const projects = [
+                {id: '1', src: Img1, alt: 'Person reading a newspaper.', title: 'Grow your business'},
+                {id: '2', src: Img2, alt: 'On the table, there is a tablet and a smartwatch.', title: 'Why your client needs a responsive website'},
+                {id: '3', src: Img3, alt: 'A notepad with a pen and a ruler.', title: 'Educate your employees to get better results'},
+                {id: '4', src: Img4, alt: 'A computer displaying a chart.', title: 'Business insights is a important piece of your business'}
+            ]
+            setProjects(projects)
+        }
+        getProjects()
+    }, [])
+    
   return (
-    <section className="project-case">
-    <div className="container">
-
-        <div className="project-case-info">
-            <h3>Project & Case Studies</h3>
-            <h2>Let's Looks Our Global Projects</h2>
-        </div>
-
-        <div className="project-case-grid">
-            
-            <a className="clickable" href="#">
-                <article className="blog-card" aria-label="link to grow your business">
-                    <img src="/images/projects/Image1.jpg" alt="Picture of a person reading a newspaper." />
-                    <div className="blog-info">
-                        <h4>Grow your business</h4>
-                        <div className="blog-button">
-                            <p>Read more<i className="fa-regular fa-arrow-up-right" aria-hidden="true"></i></p>
-                        </div>
-                    </div>
-                </article>
-            </a>
-
-            <a className="clickable" href="#">
-                <article className="blog-card" aria-label="link to why your client needs a responsive website">
-                    <img src="/images/projects/Image2.jpg"
-                        alt="On the table, there is a tablet and a smartwatch." />
-                    <div className="blog-info">
-                        <h4>Why your client needs a responsive website</h4>
-                        <div className="blog-button">
-                            <p>Read more<i className="fa-regular fa-arrow-up-right" aria-hidden="true"></i></p>
-                        </div>
-                        
-                    </div>
-                </article>
-            </a>
-
-            <a className="clickable" href="#">
-                <article className="blog-card" aria-label="link to educate your employees to get better results">
-                    <img src="/images/projects/Image3.jpg" alt="Picture of a notepad with a pen and a ruler." />
-                    <div className="blog-info">
-                        <h4>Educate your employees to get better results</h4>
-                        <div className="blog-button">
-                            <p>Read more<i className="fa-regular fa-arrow-up-right" aria-hidden="true"></i></p>
-                        </div>
-                    </div>
-                </article>
-            </a>
-
-            <a className="clickable" href="#">
-                <article className="blog-card" aria-label="Business Insights is a important piece of your business">
-                    <img src="/images/projects/Image4.jpg" alt="Picture of a computer displaying a chart." />
-                    <div className="blog-info">
-                        <h4>Business Insights is a important piece of your business</h4>
-                        <div className="blog-button">
-                            <p>Read more<i className="fa-regular fa-arrow-up-right" aria-hidden="true"></i></p>
-                        </div>
-                    </div>
-                </article>
-            </a>
-
-        </div>
-
-        <div className="btn-projects">
-            <a aria-label="all recent projects" className="button" href="#">All Recent Projects<i className="fa-regular fa-arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-
-    </div>
-</section>
-  )
+        <section className="project-case">
+            <div className="container">
+                <div className="project-case-info">
+                    <h3>Project & Case Studies</h3>
+                    <h2>Let's Looks Our Global Projects</h2>
+                </div>
+                <div className="project-case-grid">
+                    {projects.map((project) => <ProjectsCard key={project.id} {...project} />)}
+                </div>
+                <div className="btn-projects">
+                    <BtnLinks title="All Recent Projects" url="/projects" type="dark" />
+                </div>
+            </div>
+        </section>
+    )
 }
 
 export default ProjectCase

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const TeamCard = ({src, alt, name, title}) => {
+const TeamCard = (props) => {
   return (
     <div className="team-card">
-        <img src={src}alt={alt} />
+        <img src={props.src}alt={props.alt} />
         <div className="team-info">
-            <h4>{name}</h4>
-            <p>{title}</p>
+            <h4>{props.name}</h4>
+            <p>{props.title}</p>
         </div>
     </div>
   )

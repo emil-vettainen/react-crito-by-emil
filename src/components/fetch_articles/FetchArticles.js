@@ -1,52 +1,18 @@
-import React, { useEffect, useState }  from 'react'
+import React from 'react'
 import ArticleCard from '../ArticleCard'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 import './FetchArticles.css' 
+import { useArticles } from '../../contexts/ArticlesContext'
 
 
 
-const FetchArticles = ({url, enableSwiper}) => {
-    const [articles, setArticles] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    console.log(isLoading);
-    const [error, setError] = useState()
-
-    const formatMonth = (date) => {
-        const options = { month: 'short' };
-        return new Intl.DateTimeFormat('en-US', options).format(date);
-      };
-
-    useEffect (() => {
-        const fetchData = async () => {
-            setIsLoading(true)
-            
-            
-            
-            try {
-                const response = await fetch(`${url}`)
-                const articles = await response.json()
-
-                articles.forEach((article) => {
-                    const publishedDate = new Date(article.published)
-                    const monthName = formatMonth(publishedDate)
-                    article.month = monthName.charAt(0).toUpperCase() + monthName.slice(1)
-                    article.day = publishedDate.getDate()
-                })
-
-                setArticles(articles)
-            } catch (error) {
-                setError(error)
-            } 
-            
-            setIsLoading(false)
-        }
-        fetchData()
-    }, [url])
-    
+const FetchArticles = ({enableSwiper}) => {
+    const { articles, isLoading, error } = useArticles()
+   
     
     if (isLoading) {
         return (
@@ -55,7 +21,7 @@ const FetchArticles = ({url, enableSwiper}) => {
                     <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
-        ) 
+        )
     }
 
     if (error) {
@@ -116,8 +82,6 @@ const FetchArticles = ({url, enableSwiper}) => {
         )
     }
 
-    
-    
     return (
         <div className='article-news-grid'>
           {articles.map((article) => (
@@ -126,5 +90,4 @@ const FetchArticles = ({url, enableSwiper}) => {
         </div>
     )
 }
-
 export default FetchArticles

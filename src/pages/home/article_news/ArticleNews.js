@@ -6,17 +6,17 @@ import BtnLinks from '../../../components/ui/BtnLinks'
 
 const ArticleNews = () => {
   return (
-    <section className="article-news">
+        <section className="article-news">
             <div className="container">
                 <div className="news-head">
                     <h3>Article & News</h3>
                     <h2>Get Every Single Articles & News</h2>
-                    <BtnLinks title="Browse articles" url="/news" />
+                    <BtnLinks title="Browse articles" url="/news" type="transparent" />
                 </div>
-                <FetchArticles url="https://win23-assignment.azurewebsites.net/api/articles" enableSwiper={true} /> 
+              <FetchArticles enableSwiper={true} />
             </div>
         </section>
-  )
+    )
 }
 
 export default ArticleNews

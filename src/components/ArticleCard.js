@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const ArticleCard = (props) => {
   return (
-    
     <Link className="clickable" to={`/news/${props.id}`} >
         <article className="article-news-card">
             <img className="card-img" src={props.imageUrl}
@@ -20,7 +19,6 @@ const ArticleCard = (props) => {
             </div>
         </article>
     </Link>
-    
   )
 }
 

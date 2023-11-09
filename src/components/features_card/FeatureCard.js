@@ -1,7 +1,6 @@
 import React from 'react'
 
-const FeaturesCard = (props) => {
-    
+const FeatureCard = (props) => {
     return (
         <div className="features-card">
             <img src={props.src} alt={props.alt} />
@@ -11,7 +10,7 @@ const FeaturesCard = (props) => {
     )
 }
 
-export default FeaturesCard
+export default FeatureCard
 
 
 

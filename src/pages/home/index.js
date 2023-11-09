@@ -4,7 +4,7 @@ import Showcase from './showcase/Showcase'
 import Footer from '../../components/footer/Footer'
 import BusinessLogos from './business_logo/BusinessLogos'
 import Features from './features/Features'
-import SignForm from '../../components/SignForm'
+
 import AboutCompany from './about_company/AboutCompany'
 import OurService from './our_service/OurServices'
 import WhyUs from './why_us/WhyUs'
@@ -12,30 +12,30 @@ import ProjectCase from './project_case/ProjectCase'
 import Team from './team/Team'
 import Testimonials from './testimonials/Testimonials'
 import ArticleNews from './article_news/ArticleNews'
+import ContactForm from '../../components/contact_form/ContactForm'
 
 
 
 
 const Home = () => {
   return (
-    <>
-    <Header />
-    <main>
-      <SignForm />
-        <Showcase />
-        <BusinessLogos />
-        <Features />
-        <AboutCompany />
-        <OurService />
-        <WhyUs />
-        <ProjectCase />
-        <Team />
-        <Testimonials />
-        <ArticleNews />
-        
-    </main>
-    <Footer />
-    </>
-  )
+        <>
+        <Header />
+        <main>
+            <ContactForm />
+            <Showcase />
+            <BusinessLogos />
+            <Features />
+            <AboutCompany />
+            <OurService />
+            <WhyUs />
+            <ProjectCase />
+            <Team />
+            <Testimonials />
+            <ArticleNews />
+        </main>
+        <Footer />
+        </>
+    )
 }
 export default Home

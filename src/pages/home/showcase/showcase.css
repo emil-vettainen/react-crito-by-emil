@@ -1,8 +1,8 @@
 .hero {
     background-color: #f0efe9;
-    /* background-image: url(/images/bg-effects/bg-showcase.svg);
+    background-image: url(/src/assets/images/bg-effects/bg-showcase.svg);
     background-position: 0% 100%;
-    background-repeat: no-repeat; */
+    background-repeat: no-repeat;
   }
   @media (max-width: 1200px) {
     .hero {

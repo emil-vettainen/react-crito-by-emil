@@ -5,11 +5,11 @@ import Footer from '../../components/footer/Footer'
 
 const NotFound = () => {
   return (
-    <div className='wrapper'>
-    <NotFoundSection />
-    <Footer />
-    </div>
-  )
+        <div className='wrapper'>
+            <NotFoundSection />
+            <Footer />
+        </div>
+    )
 }
 
 export default NotFound

@@ -61,6 +61,27 @@ html, body {
   transform: scale(0.9);
 }
 
+.button-dark {
+  padding: 10px 30px;
+  background-color: #191919;
+  border: 1px solid #191919;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease-in-out;
+  text-transform: capitalize;
+  text-align: center;
+  /* flex-grow: 1; */
+}
+.button-dark i {
+  margin-left: 8px;
+  font-size: 0.9em;
+}
+.button-dark:hover {
+  transform: scale(0.9);
+}
 
 
 h2 {
@@ -102,16 +123,16 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 100svh;
 }
 
 
 .sign-up {
   padding: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem) 0;
   background-color: #F0EFE9;
-  /* background-image: url(/images/bg-effects/bg-signup.svg);
+  background-image: url(/src/assets/images/bg-effects/bg-signup.svg);
   background-repeat: no-repeat;
-  background-position: 100% 100%; */
+  background-position: 100% 100%;
 }
 @media (min-width: 768px) {
   .sign-up {
@@ -141,20 +162,20 @@ h4 {
   grid-template-columns: 1fr;
   justify-content: center;
   gap: 20px;
-  border: 1px solid red;
+  
   
 }
 
 
 
 .sign-up .container .sign-up-form p {
-  color: red;
+  
 
   padding-left: 25px;
   margin: 0;
   font-size: 1rem;
 
-  border:1px solid hotpink
+  
 }
 
 .sign-up .container .sign-up-form input {
@@ -175,7 +196,7 @@ h4 {
   }
 }
 
-.error {
+.sign-up .container .sign-up-form input.error {
   border: 1px solid red;
 }
 
@@ -184,4 +205,64 @@ h4 {
 
 
 
+.mySwiper .swiper-pagination{
+  position: relative;
+  margin-top: 3rem ;
+  
+}
 
+.mySwiper .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  background-color: #191919;
+}
+
+
+.button-next-slide {
+  font-size: 1.875rem;
+  color: #191919;
+  position: absolute;
+  right: -30px;
+  top: 150px;
+  z-index: 99;
+}
+
+
+
+.button-prev-slide {
+  font-size: 1.875rem;
+  color: #191919;
+  position: absolute;
+  left: -30px;
+  top: 150px;
+  z-index: 99;
+  
+}
+
+.button-next-slide[aria-disabled="true"],
+.button-prev-slide[aria-disabled="true"] {
+  opacity: 0.6;
+ 
+}
+
+
+
+
+@media (max-width: 576px) {
+
+  .button-next-slide, .button-prev-slide {
+    display: none;
+  }
+}
+
+
+  
+.container.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}

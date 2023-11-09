@@ -6,17 +6,15 @@ import AboutImg from '../../../assets/images/about.jpg'
 
 const AboutCompany = () => {
   return (
-    <section className="about-company">
+        <section className="about-company">
             <div className="container">
-
                 <div className="about-img">
-                    <img src={AboutImg} alt="Picture of Samantha walking in the company hallway" />
+                    <img src={AboutImg} alt="Samantha walking in the company hallway" />
                     <div className="img-info">
                         <h4>Samantha Brown, <span>Founder</span></h4>
                         <p>"Lorem ipsum dolor sit amet consectetur<br /> adipisicing elit."</p>
                     </div>
                 </div>
-
                 <article className="about-info">
                     <h3>about company</h3>
                     <h2>we are business consulting & credit repair experts</h2>
@@ -30,10 +28,9 @@ const AboutCompany = () => {
                                 className="fa-sharp fa-solid fa-play" aria-hidden="true"></i>Intro Video</Link>
                     </div>
                 </article>
-
             </div>
         </section>
-  )
+    )
 }
 
 export default AboutCompany

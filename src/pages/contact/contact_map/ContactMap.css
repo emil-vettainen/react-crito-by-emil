@@ -1,0 +1,10 @@
+.google-maps {
+    display: block;
+    width: 100%;
+    min-height: 420px;
+  }
+  @media (min-width: 992px) {
+    .google-maps {
+      min-height: 620px;
+    }
+  }

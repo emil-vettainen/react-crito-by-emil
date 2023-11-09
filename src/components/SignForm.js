@@ -16,6 +16,8 @@ const SignForm = () => {
 
     if (Object.keys(errors).length === 0) {
       console.log('inga fel gogog');
+      setValues({email: ''})
+      setIsFormSubmitted(true)
     }
   }
 
@@ -49,7 +51,7 @@ const SignForm = () => {
       <h2>Get News Updates By Signup</h2>
 
 
-      <form onSubmit={HandleSignUp} id="sign-up-form" className="sign-up-form"   noValidate>
+      <form onSubmit={HandleSignUp} id="sign-up-form" className="sign-up-form" noValidate>
         <input 
         type="email" 
         id="email" 
@@ -68,8 +70,11 @@ const SignForm = () => {
           
 
         <p>{formError.email}</p>
+        {isFormSubmitted ? (
+        <p className='tack'>Tack! Ditt meddelande har skickats!</p>
+      ) : null}
       </form>
-
+     
       
 
 

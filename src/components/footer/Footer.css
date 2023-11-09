@@ -1,8 +1,8 @@
 .footer {
     background-color: #0E1021;
-    /* background-image: url(/images/bg-effects/bg-footer.svg);
+    background-image: url(/src/assets/images/bg-effects/bg-footer.svg);
     background-repeat: no-repeat;
-    background-position: 100% 100%; */
+    background-position: 100% 100%;
     padding-top: clamp(3rem, 1.8034rem + 5.9829vw, 7.188rem);
     padding-bottom: clamp(3rem, 2.4286rem + 2.8571vw, 5rem);
   }
@@ -25,9 +25,16 @@
   }
   .footer .container .footer-about {
     display: flex;
-    flex-flow: row wrap;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    
+    
+    
   }
+
+  
+  
   @media (min-width: 576px) and (max-width: 1200px) {
     .footer .container .footer-about {
       grid-area: footer-about;

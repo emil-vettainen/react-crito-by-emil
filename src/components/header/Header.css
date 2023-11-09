@@ -84,6 +84,7 @@ header {
 
   header .container .menu .main-menu button.fixed {
     position: fixed;
+    font-size: 1.5rem;
   }
   @media (min-width: 992px) {
     header .container .menu .main-menu button {

@@ -2,9 +2,9 @@
     padding-top: clamp(3.5rem, 2.7518rem + 3.1925vw, 5.625rem);
     padding-bottom: clamp(3.5rem, 2.0915rem + 6.0094vw, 7.5rem);
     background-color: #F0EFE9;
-    /* background-image: url(/images/bg-effects/bg-our-services.svg);
+    background-image: url(/src/assets/images/bg-effects/bg-our-services.svg);
     background-repeat: no-repeat;
-    background-position: 100% 100%; */
+    background-position: 100% 100%;
   }
   .our-services .container h2 {
     margin-top: 20px;
@@ -71,7 +71,7 @@
     display: flex;
     justify-content: center;
   }
-  .our-services .container .btn-browse-services a {
+  /* .our-services .container .btn-browse-services a {
     background-color: transparent;
     border-color: #191919;
     padding: 12px 30px;
@@ -81,4 +81,4 @@
     .our-services .container .btn-browse-services a {
       flex-grow: 0;
     }
-  }
+  } */

@@ -11,6 +11,7 @@ import NotFound from './pages/not_found/';
 import News from './pages/news/';
 import Post from './pages/post/';
 import ScrollTop from './components/ui/ScrollTop';
+import { ArticlesProvider } from './contexts/ArticlesContext';
 
 
 
@@ -19,13 +20,15 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ScrollTop />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/news' element={<News />} />
-        <Route path='/news/:id' element={<Post />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <ArticlesProvider>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/news/:id' element={<Post />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </ArticlesProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

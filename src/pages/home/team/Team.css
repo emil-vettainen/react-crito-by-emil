@@ -28,7 +28,7 @@
       flex-grow: 0;
     }
   }
-  .team .container .team-grid {
+  /* .team .container .team-grid {
     display: grid;
     grid-template-columns: 1fr;
     -moz-column-gap: 20px;
@@ -46,9 +46,13 @@
     .team .container .team-grid {
       grid-template-columns: repeat(4, 1fr);
     }
-  }
-  .team .container .team-grid .team-card {
+  } */
+  .team .container .slider .team-card {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .mySwiper img {
+    width: 100%;
   }

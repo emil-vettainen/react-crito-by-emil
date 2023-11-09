@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ServiceCard = ({title, description, url}) => {
+const ServicesCard = ({title, description, url}) => {
 
   
 
@@ -18,4 +18,4 @@ const ServiceCard = ({title, description, url}) => {
   )
 }
 
-export default ServiceCard
+export default ServicesCard

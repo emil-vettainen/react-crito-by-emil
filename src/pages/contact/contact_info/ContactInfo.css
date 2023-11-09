@@ -1,0 +1,47 @@
+.connect {
+    padding-top: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+    padding-bottom: clamp(2rem, 1.1429rem + 4.2857vw, 5rem);
+  }
+  .connect .container {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 30px;
+  }
+  @media (min-width: 992px) {
+    .connect .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .connect .container .connect-card {
+    display: flex;
+    gap: 20px;
+    padding: 3rem;
+    border: 1px solid #dad9d3;
+  }
+  .connect .container .connect-card .connect-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    padding: 20px 22px;
+    border-radius: 50%;
+    background-color: #191919;
+  }
+  .connect .container .connect-card i {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .connect .container .connect-card .connect-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .connect .container .connect-card .connect-info h4 {
+    margin-bottom: 20px;
+  }
+  .connect .container .connect-card .connect-info a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .connect .container .connect-card .connect-info a:hover {
+    text-decoration: underline;
+  }

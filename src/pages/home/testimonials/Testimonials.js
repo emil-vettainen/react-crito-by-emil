@@ -1,77 +1,70 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Testimonials.css'
+import StarIcon from './../../../assets/icons/Star.svg'
+import AmandaImg from './../../../assets/images/testimonial/Amanda.png'
+import CassandraImg from './../../../assets/images/testimonial/Cassandra.png'
+import JackImg from './../../../assets/images/testimonial/Jack.png'
+import TestimonialsCard from '../../../components/TestimonialsCard'
+import BtnLinks from './../../../components/ui/BtnLinks'
 
 const Testimonials = () => {
+    const [reviews, setReviews] = useState([])
+
+    useEffect (() => {
+      const getReviews= () => {
+        const reviews = [
+            { 
+                id: '1', 
+                src: StarIcon, 
+                alt: 'Illustration of 5/5 starrate.', 
+                review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, addignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam voluptate", 
+                clientName: 'Cassandra Warren', 
+                clientTitle: 'Business Manager, Dorfus',
+                clientImg: CassandraImg
+            },
+            { 
+                id: '2', 
+                src: StarIcon, 
+                alt: 'Illustration of 5/5 starrate.', 
+                review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, addignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam voluptate", 
+                clientName: 'Amanda Tulling', 
+                clientTitle: 'Senior Developer, Square',
+                clientImg: AmandaImg
+            },
+            { 
+                id: '3', 
+                src: StarIcon, 
+                alt: 'Illustration of 5/5 starrate.', 
+                review: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, addignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam voluptate", 
+                clientName: 'Jack McDogglas', 
+                clientTitle: 'Key Account Manager, Gobana',
+                clientImg: JackImg
+            },
+        ]
+        setReviews(reviews)
+      }
+      getReviews()
+    }, [])
+
+
   return (
-    <section className="testimonial">
+        <section className="testimonial">
             <div className="ram-left-right">
                 <div className="container">
                     <div className="testimonial-txt">
                         <h3>Testimonial</h3>
                         <h2>What Our Clients Says</h2>
                     </div>
-
                     <div className="testimonial-grid">
-
-                        <article className="review">
-                            <div className="review-txt">
-                                <img src="/icons/Star.svg" alt="Illustration of 5/5 starrate." />
-                                <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, ad
-                                    dignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam
-                                    voluptate"</p>
-                            </div>
-                            <div className="review-maker">
-                                <img className="review-img" src="/images/testimonial/Cassandra.png"
-                                    alt="Profile picture of Cassandra Warren." />
-                                <div className="review-name">
-                                    <h4>Cassandra Warren</h4>
-                                    <p>Business Manager, Dorfus</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article className="review">
-                            <div className="review-txt">
-                                <img src="/icons/Star.svg" alt="5 of 5 starrate." />
-                                <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, ad
-                                    dignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam
-                                    voluptate"</p>
-                            </div>
-                            <div className="review-maker">
-                                <img className="review-img" src="/images/testimonial/Amanda.png"
-                                    alt="Profile picture of Amanda Tulling." />
-                                <div className="review-name">
-                                    <h4>Amanda Tulling</h4>
-                                    <p>Senior Developer, Square</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article className="review">
-                            <div className="review-txt">
-                                <img src="/icons/Star.svg" alt="5 of 5 starrate." />
-                                <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium libero, ad
-                                    dignissimos velit qui, dolorum obcaecati cum saepe nesciunt nemo eligendi numquam
-                                    voluptate"</p>
-                            </div>
-                            <div className="review-maker">
-                                <img className="review-img" src="/images/testimonial/Jack.png"
-                                    alt="Profile picture of Jack McDogglas." />
-                                <div className="review-name">
-                                    <h4>Jack McDogglas</h4>
-                                    <p>Key Account Manager, Gobana</p>
-                                </div>
-                            </div>
-                        </article>
-
+                        {reviews.map((review) => <TestimonialsCard key={review.id} {...review} /> )}
                     </div>
                     <div className="all-reviews">
-                        <a aria-label="all reviews" className="button" href="#">All Reviews<i className="fa-regular fa-arrow-up-right" aria-hidden="true"></i></a>
+                        <BtnLinks title="All Reviews" url="/reviews" typ="dark" />
                     </div>
                 </div>
             </div>
         </section>
-  )
+    )
 }
 
 export default Testimonials

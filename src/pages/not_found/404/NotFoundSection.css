@@ -1,17 +1,30 @@
-.notfound {
+.not_found {
+    padding-top: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+    padding-bottom: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+    background-color: #f0efe9;
+    background-image: url(../../../assets/images/bg-effects/bg-connect.svg);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+   
     display: grid;
+    flex:1;
     place-content: center;
     place-items: center;
-    flex-grow: 1;
-    padding: 2rem 0;
+
+
+    
+
 }
 
-
-.notfound h2 {
-    text-align: center;
-    margin-bottom: 1em;
+.not_found h2 {
+   text-align: center;
 }
 
-.notfound a {
+.not_found a {
+    margin-top: 1rem;
     padding: 12px 30px;
 }
+
+
+
+
