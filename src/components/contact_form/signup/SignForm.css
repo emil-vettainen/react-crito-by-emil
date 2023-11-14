@@ -1,0 +1,52 @@
+.sign-up {
+    padding: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem) 0;
+    background-color: #F0EFE9;
+    background-image: url(/src/assets/images/bg-effects/bg-signup.svg);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+  }
+  @media (min-width: 768px) {
+    .sign-up {
+      background-position: 100% 70%;
+    }
+  }
+  .sign-up .container {
+    display: flex;
+    flex-flow: column;
+    
+    gap: 20px;
+  }
+  @media (min-width: 1400px) {
+    .sign-up .container {
+      flex-direction: row;
+      align-items: center;
+      gap: 140px;
+    }
+  }
+  .sign-up .container h2 {
+    margin: 0;
+    text-align: center;
+  }
+  .sign-up .container .sign-up-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .sign-up .container .sign-up-form input {
+    width: 100%;
+  }
+  
+  .sign-up .container .sign-up-form .button {
+    padding: 12px 30px;
+  }
+  @media (min-width: 768px) {
+    .sign-up .container .sign-up-form {
+      flex-direction: row;
+    }
+
+    .sign-up .container .sign-up-form .button {
+      align-self: center;
+    }
+
+  }

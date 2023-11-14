@@ -1,0 +1,43 @@
+@media (min-width: 576px) {
+    .connect-form {
+      padding-bottom: clamp(0rem, -2.1429rem + 10.7143vw, 7.5rem);
+    }
+  }
+  .connect-form .container {
+    padding-top: clamp(3rem, 1.7143rem + 6.4286vw, 7.5rem);
+    padding-bottom: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #f0efe9;
+  }
+
+  .connect-form .container .contact-form {
+    display: flex;
+    flex-direction: column;
+    
+   
+  }
+
+  .connect-form .container .form-field {
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+   /* padding-top: .5rem;    */
+  }
+
+  .connect-form .container .form-field p{
+    padding: .2rem 1rem;
+  }
+
+  
+
+ 
+
+  .connect-form .container .contact-form .button {
+    padding: 12px 30px;
+    margin-top: 40px;
+    
+  }
+  

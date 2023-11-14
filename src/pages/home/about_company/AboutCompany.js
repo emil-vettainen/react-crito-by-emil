@@ -23,7 +23,7 @@ const AboutCompany = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis esse quasi incidunt adipisci
                         accusantium libero provident voluptate amet.</p>
                     <div className="about-buttons">
-                        <BtnLinks title="Learn more" url="/about" />
+                        <BtnLinks title="Learn more" url="/about" type="dark" />
                         <Link className="play" to="/about/intro-video" aria-label="link to intro video"><i
                                 className="fa-sharp fa-solid fa-play" aria-hidden="true"></i>Intro Video</Link>
                     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './WhyUs.css'
 import WhyUsImg from '../../../assets/images/why-choose-us.jpg'
 import WhyUsIcons from '../../../components/WhyUsIcons'
@@ -8,22 +8,14 @@ import hexagonIcon from '../../../assets/icons/why_choose_us/strategic.svg'
 import designIcon from '../../../assets/icons/why_choose_us/experience.svg'
 
 const WhyUs = () => {
-    const [lists, setLists] = useState([])
 
-    useEffect (() => {
-        const getList = () => {
-            const lists = [
-                {id: '1', src: processIcon, alt: 'Illustration of thumbs up.', title: 'Process Excellence', description: 'Lorem, ipsum dolor sit amet consectetur.'},
-                {id: '2', src: hexagonIcon, alt: 'Illustration of hexagon.', title: 'Strategic Planning', description: 'Lorem, ipsum dolor sit amet consectetur.'},
-                {id: '3', src: designIcon, alt: 'Illustration of design tool.', title: 'Experience Design', description: 'Lorem, ipsum dolor sit amet consectetur.'},
-                {id: '4', src: aiIcon, alt: 'Illustration of AI.', title: 'Artificial Inteligence', description: 'Lorem, ipsum dolor sit amet consectetur.'}
-            ]
-            setLists(lists)
-        }
-        getList()
-    }, [])
-
-
+    const lists = [
+        {id: '1', src: processIcon, alt: 'Illustration of thumbs up.', title: 'Process Excellence', description: 'Lorem, ipsum dolor sit amet consectetur.'},
+        {id: '2', src: hexagonIcon, alt: 'Illustration of hexagon.', title: 'Strategic Planning', description: 'Lorem, ipsum dolor sit amet consectetur.'},
+        {id: '3', src: designIcon, alt: 'Illustration of design tool.', title: 'Experience Design', description: 'Lorem, ipsum dolor sit amet consectetur.'},
+        {id: '4', src: aiIcon, alt: 'Illustration of AI.', title: 'Artificial Inteligence', description: 'Lorem, ipsum dolor sit amet consectetur.'}
+    ]
+  
   return (
         <section className="why-us">
             <div className="container">

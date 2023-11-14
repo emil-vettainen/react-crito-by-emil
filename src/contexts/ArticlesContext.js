@@ -5,7 +5,6 @@ import { useContext, createContext } from "react";
 const ArticlesContext = createContext()
 
 export const useArticles = () => useContext(ArticlesContext)
-
 export const ArticlesProvider = ({children}) => {
     const apiUrl = 'https://win23-assignment.azurewebsites.net/api/articles'
     const [articles, setArticles] = useState([])
@@ -18,7 +17,12 @@ export const ArticlesProvider = ({children}) => {
         return new Intl.DateTimeFormat('en-US', options).format(date)
     }
 
-    
+    const formatArticleDate = (dateString) => {
+        const options = { day: 'numeric', month: 'short', year: 'numeric' };
+        return new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
+        
+    };
+
 
     useEffect (() => {
         fetchArticles()
@@ -26,14 +30,12 @@ export const ArticlesProvider = ({children}) => {
     }, [])
 
 
-    
     const fetchArticles = async () => {
         setIsLoading(true)
         try {
             const response = await fetch(apiUrl)
             const articles = await response.json()
-            console.log(articles);
-         
+           
             articles.forEach((article) => {
                 const publishedDate = new Date(article.published)
                 const monthName = formatMonth(publishedDate)
@@ -47,11 +49,7 @@ export const ArticlesProvider = ({children}) => {
         setIsLoading(false)
     }
 
-    const formatArticleDate = (dateString) => {
-        const options = { day: 'numeric', month: 'short', year: 'numeric' };
-        return new Intl.DateTimeFormat('en-US', options).format(new Date(dateString));
-        
-    };
+  
 
 
     const fetchArticle = async (id) => {

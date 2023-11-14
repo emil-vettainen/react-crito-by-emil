@@ -3,7 +3,7 @@ import Header from '../../components/header/Header'
 
 import TopSection from '../../components/top_section/TopSection'
 import OurNews from './our_news/OurNews'
-import SignForm from '../../components/SignForm'
+import SignForm from '../../components/contact_form/signup/SignForm'
 import Footer from '../../components/footer/Footer'
 
 

@@ -65,16 +65,13 @@
   .project-case .container .btn-projects {
     display: flex;
     justify-content: center;
+    
   }
-  /* .project-case .container .btn-projects .button {
-    background-color: #191919;
-    border-color: #191919;
-    color: #fff;
-    padding: 12px 30px;
+  .project-case .container .btn-projects button {
     flex-grow: 1;
   }
   @media (min-width: 576px) {
-    .project-case .container .btn-projects .button {
+    .project-case .container .btn-projects button {
       flex-grow: 0;
     }
-  } */
+  }

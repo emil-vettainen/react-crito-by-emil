@@ -16,10 +16,7 @@ const Showcase = () => {
                     <BtnLinks title="Learn More" url="/about" type="transparent" />
                 </div>
                 <img src={ShowcaseImg} className="hero-img" alt="guy with suit, thinking while looking at his ipad" /> 
-                
             </div>
-
-            
         </section>
     )
 }

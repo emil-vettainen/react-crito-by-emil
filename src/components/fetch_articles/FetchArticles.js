@@ -26,7 +26,7 @@ const FetchArticles = ({enableSwiper}) => {
 
     if (error) {
         return (
-            <div>Try again</div>
+            <div className='mt-5 text-center'>Something went wrong, please refresh your browser and try agian</div>
         )
     }
 

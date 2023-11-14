@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './FetchArticlePost.css'
 import { useArticles } from '../../contexts/ArticlesContext'
+import ArticlesCategory from '../ArticlesCategory'
 
 const FetchArticlePost = () => {
     const {id} = useParams();
-    const {article, fetchArticle, clearArticle, isLoading, error} = useArticles()
+    const {articles, article, fetchArticle, clearArticle, isLoading, error} = useArticles()
    
    
     useEffect (() => {
         fetchArticle(id)
         return () => clearArticle ()
     }, [id])
+
 
 
     if (isLoading) {
@@ -27,7 +30,7 @@ const FetchArticlePost = () => {
 
     if (error) {
         return (
-            <div>Try again</div>
+            <div className='mt-5 text-center'>Something went wrong, please refresh your browser and try agian</div>
         )
     }
 
@@ -49,105 +52,45 @@ const FetchArticlePost = () => {
                 </div>
                 
                 <div className="article-category">
-                    <a href="#">Digitalization</a>
-                    <a href="#">School</a>
-                    <a href="#">It</a>
-                    <a href="#">Design</a>
-                    <a href="#">Work</a>
-                    <a href="#">Tech</a>
-
+                    <Link to="#" >Digitalization</Link>
+                    <Link to="#">School</Link>
+                    <Link to="#">It</Link>
+                    <Link to="#">Design</Link>
+                    <Link to="#">Work</Link>
+                    <Link to="#">Tech</Link>
                 </div>
             
             </article>
 
 
             <aside className="">
-
                 <div className="search-post">
                     <input type="text" placeholder="Type to search..." />
                     <i className="fa-regular fa-magnifying-glass"></i>
                 </div>
-                
-
                 <div className="recent-post">
                     <p>Recent Posts</p>
-                <ul>
-                    <li>
-                        <a href="#">
-                            How To Blow Through Capital At An Incredible Rate
-                            <span>Jan 14, 2020</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Design Studies That Everyone Should Know About?
-                            <span>Jan 14, 2020</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            How did we get 1M+ visitors in 30 days without anything!
-                            <span>Jan 14, 2020</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Figma On Figma: How we Built Our Website Design System
-                            <span>Jan 14, 2020</span>
-                        </a>
-                    </li>
-                   
-                </ul>
-
+                    <ul>
+                        {
+                            articles.slice(0, 4).map((article) => (
+                                <li key={article.id}> 
+                                    <Link to={`/news/${article.id}`}>
+                                        {article.title} 
+                                        <span>Jan 14, 2020</span>
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
-
                 <div className="categories-post">
                     <p>Categoires</p>
                 <ul>
-                
-                    <li>
-                        <a href="#">
-                            Technology - <span>20 Post</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Freelancing - <span>07 Post</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Writing - <span>16 Post</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Marketing - <span>11 Post</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Business - <span>35 Post</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Education - <span>14 Post</span>
-                        </a>
-                    </li>
+                    <ArticlesCategory />
                 </ul>
-
                 </div>
-                
-                
-
             </aside>
-            
-
-
-        </div>
-
-      
+        </div>  
     </section>
   )
 }

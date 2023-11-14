@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './Testimonials.css'
 import StarIcon from './../../../assets/icons/Star.svg'
 import AmandaImg from './../../../assets/images/testimonial/Amanda.png'
@@ -8,10 +8,7 @@ import TestimonialsCard from '../../../components/TestimonialsCard'
 import BtnLinks from './../../../components/ui/BtnLinks'
 
 const Testimonials = () => {
-    const [reviews, setReviews] = useState([])
 
-    useEffect (() => {
-      const getReviews= () => {
         const reviews = [
             { 
                 id: '1', 
@@ -41,11 +38,7 @@ const Testimonials = () => {
                 clientImg: JackImg
             },
         ]
-        setReviews(reviews)
-      }
-      getReviews()
-    }, [])
-
+ 
 
   return (
         <section className="testimonial">
