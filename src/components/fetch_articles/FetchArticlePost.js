@@ -76,11 +76,14 @@ const FetchArticlePost = () => {
                                 <li key={article.id}> 
                                     <Link to={`/news/${article.id}`}>
                                         {article.title} 
-                                        <span>Jan 14, 2020</span>
+                                        <span>{article.day} {article.month}</span>
                                     </Link>
                                 </li>
                             ))
+                          
                         }
+                      
+                          
                     </ul>
                 </div>
                 <div className="categories-post">
