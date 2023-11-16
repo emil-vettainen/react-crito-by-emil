@@ -79,6 +79,7 @@
 .article .container aside .search-post {
   padding-bottom: 2rem;
 }
+
 .article .container aside .search-post input[type=text] {
   min-width: 100%;
   padding-block: 0.85rem;
@@ -88,14 +89,16 @@
   background-color: #efefef;
   font-size: inherit;
   font-family: inherit;
+  
 }
 .article .container aside .search-post input[type=text]:focus {
   outline: 0;
+  
 }
 .article .container aside .search-post i {
   font-size: 1.5rem;
   position: absolute;
-  top: 0.85rem;
+  top: 1.3rem;
   left: 1.5rem;
 }
 .article .container aside .recent-post {

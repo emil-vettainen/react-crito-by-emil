@@ -21,7 +21,7 @@ const ArticlesCategory = () => {
     <ul>
       {uniqueCategories.map((category) => (
         <li key={category}>
-          <Link to="#">
+          <Link to={`/category${category}`}>
             {category} - <span>20 Post</span>
           </Link>
         </li>
