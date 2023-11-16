@@ -1,5 +1,6 @@
 .article {
   padding-top: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
+  padding-bottom: clamp(3rem, 2.0714rem + 4.6429vw, 6.25rem);
 }
 .article .container {
   display: grid;

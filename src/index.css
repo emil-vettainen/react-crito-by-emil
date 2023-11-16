@@ -232,3 +232,7 @@ textarea.error {
 textarea.success {
   border: 2px solid rgb(52, 201, 90);
 }
+
+.single-article .article-news {
+    background-color: #F0EFE9;
+}
