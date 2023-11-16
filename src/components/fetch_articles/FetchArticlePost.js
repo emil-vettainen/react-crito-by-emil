@@ -76,7 +76,7 @@ const FetchArticlePost = () => {
                                 <li key={article.id}> 
                                     <Link to={`/news/${article.id}`}>
                                         {article.title} 
-                                        <span>{article.day} {article.month}</span>
+                                        <span>{article.published.slice(0, 10)}</span>
                                     </Link>
                                 </li>
                             ))
